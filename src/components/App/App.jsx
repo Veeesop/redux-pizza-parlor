@@ -5,6 +5,9 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import CustomerForm from '../CustomerForm/CustomerForm'
 
+//PizzaGallery
+import PizzaGallery from '../PizzaGallery/PizzaGallery';
+
 function App() {
   const dispatch = useDispatch();
 
@@ -34,7 +37,11 @@ const fetchPizzas = () => {
 
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
-      <CustomerForm />
+
+
+      <PizzaGallery/>
+  
+
     </div>
   );
 }
