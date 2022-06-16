@@ -39,7 +39,7 @@ const fetchPizzas = () => {
 
       <Router>
         <div>
-          <Link to="/customerInfo">Home</Link>
+          <Link to="/customerInfo">next</Link>
           <Route exact path="/customerInfo">
             <CustomerForm />
           </Route>         
