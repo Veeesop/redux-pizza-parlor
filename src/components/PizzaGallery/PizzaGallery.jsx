@@ -1,6 +1,7 @@
 import {useSelector} from 'react-redux';
 import './PizzaGallery.css'
 import PizzaGalleryItem from '../PizzaGalleryItem/PizzaGalleryItem';
+import {Link} from 'react-router-dom'
 
 export default function PizzaGallery(){
 
@@ -8,7 +9,8 @@ export default function PizzaGallery(){
     
     return(
         <div>
-            <h2>Place Your Order:</h2>
+            <Link to='customerInfo'>Next</Link>
+            <h2>Step 1: Place Your Order:</h2>
             <div className='PizzaGalleryList'>
                 {pizzaGalleryList.map(pizzaGalleryItem =>(
                     <PizzaGalleryItem key={pizzaGalleryItem.id} pizzaGalleryItem={pizzaGalleryItem}  />

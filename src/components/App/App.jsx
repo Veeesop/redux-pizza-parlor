@@ -40,25 +40,29 @@ const fetchPizzas = () => {
     <div className='App'>
       <Header />
       <Router>
-        <div>
+
+       
+       {/* //welcome */}
+        <Route exact path='/'>
+          <img src='images/pizza_photo.png' />
+          <p>Pizza is great.</p>
+        </Route>
+
+
+
+        
+        <Route exact path='/pizzaGallery'>
+            <PizzaGallery/>
+          </Route>
+      
+        <Route exact path="/customerInfo">
           <Link to="/customerInfo">next</Link>
-          <Route exact path="/customerInfo">
-            <CustomerForm />
-          </Route>
-          <Route>
-            <Checkout />
-          </Route>
-        </div>
-      
+          <CustomerForm />
+        </Route>  
 
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
-
-      
       </Router>
-
-      <PizzaGallery/>
-  
+    
+        
     </div>
   );
 }
