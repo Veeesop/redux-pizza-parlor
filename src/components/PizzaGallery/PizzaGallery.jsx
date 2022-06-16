@@ -1,4 +1,5 @@
 import {useSelector} from 'react-redux';
+import './PizzaGallery.css'
 
 export default function PizzaGallery(){
 
@@ -7,8 +8,10 @@ export default function PizzaGallery(){
     return(
         <div>
             <h2>Place Your Order:</h2>
-            <div>
-                
+            <div className='PizzaGalleryList'>
+                <div className='PizzaGalleryItem'>
+                    <p>test</p>
+                </div>
             </div>
         </div>
     )
