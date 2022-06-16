@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import CustomerForm from '../CustomerForm/CustomerForm'
 
 //PizzaGallery
 import PizzaGallery from '../PizzaGallery/PizzaGallery';
@@ -36,8 +37,11 @@ const fetchPizzas = () => {
 
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
+
+
       <PizzaGallery/>
   
+
     </div>
   );
 }
