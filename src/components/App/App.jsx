@@ -47,12 +47,9 @@ const fetchPizzas = () => {
             <CustomerForm />
           </Route>
       
-
-
-       
        {/* //welcome */}
         <Route exact path='/'>
-          <img src='images/pizza_photo.png' />
+          <img className='pizzaPic' src='images/pizza_photo.png' />
           <p>Pizza is great.</p>
           <PizzaGallery/>
         </Route>
@@ -62,7 +59,7 @@ const fetchPizzas = () => {
           <CustomerForm />
         </Route>  
 
-
+      </Router>
   
 
 
