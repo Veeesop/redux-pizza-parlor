@@ -3,6 +3,9 @@ import axios from 'axios';
 import './App.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import CustomerForm from '../CustomerForm/CustomerForm'
+
 
 function App() {
   const dispatch = useDispatch();
@@ -31,9 +34,20 @@ const fetchPizzas = () => {
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
 
+      <Router>
+        <div>
+          <Link to="/customerInfo">Home</Link>
+          <Route exact path="/customerInfo">
+            <CustomerForm />
+          </Route>         
+        </div>
+      
+
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
-  
+
+      
+      </Router>
     </div>
   );
 }
