@@ -16,7 +16,6 @@ const pizzaGalleryList = (state = [], action) => {
 };
 // //Cart reducer
 const cartReducer = (state = [], action) => {
-  
   if (action.type === "ADD_TO_CART") {
     return [...state, action.payload];
   }
@@ -31,14 +30,22 @@ const custoInfoReducer = (state = [], action) => {
   return state;
 };
 
+const primePizzaOrders = (state = [], action) => {
+  if (action.type === "SET_PRIME_PIZZA_ORDERS") {
+    return action.payload;
+  }
+  return state;
+};
+
 const storePizza = createStore(
   combineReducers({
     pizzaGalleryList,
-    cartReducer
-    // custoInfoReducer,
+    // primePizzaOrders,
+    cartReducer,
+    custoInfoReducer,
+
   }),
   applyMiddleware(logger)
-
 );
 
 ReactDOM.render(
