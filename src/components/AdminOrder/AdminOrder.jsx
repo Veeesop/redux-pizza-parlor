@@ -1,17 +1,21 @@
 import React from 'react';
-
-import {useSelector} from 'react-redux';
 import {useState} from 'react';
 
-const [currentOrder, setCurrentOrder] = useState([]);
+
 
 function AdminOrder(){
+
+const [currentOrder, setCurrentOrder] = useState([]);    
+
+const getOrder = () => {
     axios({
         method: 'GET',
         url: '/api/order'
-    }). then(response => {
+    }).then(response => {
         console.log(response);
         setCurrentOrder(response.data);
+    }).catch((error) => {
+        console.log('error on GET', error);
     })
 }
 
@@ -37,5 +41,7 @@ return (
         </tbody>  
 </table>
 )
+
+}
 
 export default AdminOrder;
