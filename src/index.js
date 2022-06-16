@@ -15,11 +15,23 @@ const pizzaGalleryList = (state = [], action) => {
     return state;
 }
 // Cart reducer
+const cartReducer = (state = [], action) => {
+    if(action.type === '') {
+        return [...state, action.payload];
+    }
+}
 // Customer Info reducer
+const custoInfoReducer = (state = [], action) => {
+    if(action.type === '') {
+        return [...state, action.payload];
+    }
+}
 
 const storePizza = createStore(
     combineReducers({
-        pizzaGalleryList
+        pizzaGalleryList,
+        cartReducer,
+        custoInfoReducer
     }),
     applyMiddleware(logger)
 );

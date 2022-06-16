@@ -6,6 +6,9 @@ import { useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import CustomerForm from '../CustomerForm/CustomerForm'
 
+//PizzaGallery
+import PizzaGallery from '../PizzaGallery/PizzaGallery';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -48,6 +51,9 @@ const fetchPizzas = () => {
 
       
       </Router>
+
+      <PizzaGallery/>
+  
     </div>
   );
 }
