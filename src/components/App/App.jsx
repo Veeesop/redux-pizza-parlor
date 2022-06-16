@@ -11,6 +11,7 @@ import Header from '../Header/Header';
 import Checkout from '../Checkout/Checkout';
 
 
+
 //PizzaGallery
 import PizzaGallery from '../PizzaGallery/PizzaGallery';
 
@@ -41,6 +42,13 @@ const fetchPizzas = () => {
       <Header />
       <Router>
 
+          <Link to="/customerInfo">next</Link>
+          <Route exact path="/customerInfo">
+            <CustomerForm />
+          </Route>
+      
+
+
        
        {/* //welcome */}
         <Route exact path='/'>
@@ -60,9 +68,10 @@ const fetchPizzas = () => {
           <CustomerForm />
         </Route>  
 
-      </Router>
-    
-        
+
+  
+
+
     </div>
   );
 }

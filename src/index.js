@@ -40,9 +40,9 @@ const primePizzaOrders = (state = [], action) => {
 const storePizza = createStore(
   combineReducers({
     pizzaGalleryList,
-    // primePizzaOrders,
+    primePizzaOrders,
     cartReducer,
-    custoInfoReducer,
+    custoInfoReducer
 
   }),
   applyMiddleware(logger)
