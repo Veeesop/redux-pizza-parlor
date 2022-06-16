@@ -1,6 +1,9 @@
 import './PizzaGalleryItem.css'
 
+
 export default function PizzaGalleryItem({pizzaGalleryItem}){
+
+
 
     return(
         <div>
