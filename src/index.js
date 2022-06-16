@@ -31,10 +31,11 @@ const custoInfoReducer = (state = [], action) => {
 const storePizza = createStore(
   combineReducers({
     pizzaGalleryList,
-    // cartReducer,
+    cartReducer,
     custoInfoReducer,
   }),
   applyMiddleware(logger)
+
 );
 
 ReactDOM.render(
