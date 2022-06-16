@@ -43,7 +43,7 @@ const storePizza = createStore(
     pizzaGalleryList,
     cartReducer,
     custoInfoReducer,
-    // primePizzaOrders,
+    primePizzaOrders,
     cartReducer,
     custoInfoReducer,
 
