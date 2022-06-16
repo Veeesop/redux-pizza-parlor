@@ -4,6 +4,9 @@ import './App.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
+//PizzaGallery
+import PizzaGallery from '../PizzaGallery/PizzaGallery';
+
 function App() {
   const dispatch = useDispatch();
 
@@ -33,6 +36,7 @@ const fetchPizzas = () => {
 
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
+      <PizzaGallery/>
   
     </div>
   );
