@@ -54,14 +54,8 @@ const fetchPizzas = () => {
         <Route exact path='/'>
           <img src='images/pizza_photo.png' />
           <p>Pizza is great.</p>
+          <PizzaGallery/>
         </Route>
-
-
-
-        
-        <Route exact path='/pizzaGallery'>
-            <PizzaGallery/>
-          </Route>
       
         <Route exact path="/customerInfo">
           <Link to="/customerInfo">next</Link>
