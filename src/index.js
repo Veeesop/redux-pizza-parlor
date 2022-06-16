@@ -16,7 +16,6 @@ const pizzaGalleryList = (state = [], action) => {
 };
 // //Cart reducer
 const cartReducer = (state = [], action) => {
-  
   if (action.type === "ADD_TO_CART") {
     return [...state, action.payload];
   }
@@ -41,8 +40,6 @@ const primePizzaOrders = (state = [], action) => {
 const storePizza = createStore(
   combineReducers({
     pizzaGalleryList,
-    cartReducer,
-    custoInfoReducer,
     // primePizzaOrders,
     cartReducer,
     custoInfoReducer,
