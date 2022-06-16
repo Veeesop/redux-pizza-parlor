@@ -16,23 +16,23 @@ const pizzaGalleryList = (state = [], action) => {
     return state;
 }
 // Cart reducer
-const cartReducer = (state = [], action) => {
-    if(action.type === '') {
-        return [...state, action.payload];
-    }
-}
+// const cartReducer = (state = [], action) => {
+//     if(action.type === '') {
+//         return [...state, action.payload];
+//     }
+// }
 // Customer Info reducer
-const custoInfoReducer = (state = [], action) => {
-    if(action.type === '') {
-        return [...state, action.payload];
-    }
-}
+// const custoInfoReducer = (state = [], action) => {
+//     if(action.type === '') {
+//         return [...state, action.payload];
+//     }
+// }
 
 const storePizza = createStore(
     combineReducers({
         pizzaGalleryList,
-        cartReducer,
-        custoInfoReducer
+        // cartReducer,
+        // custoInfoReducer
     }),
     applyMiddleware(logger)
 );
