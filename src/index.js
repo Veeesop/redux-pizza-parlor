@@ -47,6 +47,7 @@ const storePizza = createStore(
     primePizzaOrders,
     cartReducer,
     custoInfoReducer,
+
   }),
   applyMiddleware(logger)
 );

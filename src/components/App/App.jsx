@@ -4,8 +4,12 @@ import './App.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import CustomerForm from '../CustomerForm/CustomerForm'
+
+import CustomerForm from '../CustomerForm/CustomerForm';
+import Header from '../Header/Header';
+
 import Checkout from '../Checkout/Checkout';
+
 
 //PizzaGallery
 import PizzaGallery from '../PizzaGallery/PizzaGallery';
@@ -34,10 +38,7 @@ const fetchPizzas = () => {
 
   return (
     <div className='App'>
-      <header className='App-header'>
-        <h1 className='App-title'>Prime Pizza</h1>
-      </header>
-
+      <Header />
       <Router>
         <div>
           <Link to="/customerInfo">next</Link>
