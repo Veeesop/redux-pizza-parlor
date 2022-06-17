@@ -21,6 +21,11 @@ export default function PizzaGalleryItem({pizzaGalleryItem}){
 
     function deleteFromCart(){
 
+        dispatch({
+            type: 'REMOVE_FOR_CART',
+            payload: pizzaGalleryItem.id
+        })
+
         setIsButtonClick(!isButtonClick);
     }
 
