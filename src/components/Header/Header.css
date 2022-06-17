@@ -1,3 +1,11 @@
+h1 {
+    margin: -11px 25px;
+}
+
 .cart_total {
-    margin: -19px auto;
+    margin: 8px auto;
+}
+
+.home_btn {
+    margin-top: 16px;
 }
