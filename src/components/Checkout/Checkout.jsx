@@ -47,7 +47,7 @@ const Checkout = () => {
 
     const handleCheckout = () =>{
 
-        // sendOrder();
+        sendOrder();
         history.push('/thankYou');
 
     }
