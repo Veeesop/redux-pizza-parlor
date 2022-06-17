@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
 import { useHistory } from "react-router-dom";
+import './Checkout.css';
+
 
 const Checkout = () => {
     const history = useHistory();
@@ -9,6 +11,7 @@ const Checkout = () => {
 
     const address = useSelector(store => store.custoInfoReducer)
     const cart = useSelector(store => store.cartReducer)
+    const cartPrice = useSelector(store => store.cartPriceReducer)
 
     console.log(cart)
 
@@ -28,7 +31,7 @@ const Checkout = () => {
             street_address: address.streetAddress,
             city: address.city,
             zip: 55419,
-            total: "27.98",
+            total: cartPrice,
             type: address.type,
             pizzas: pizzas
         }
@@ -43,8 +46,10 @@ const Checkout = () => {
     }
 
     const handleCheckout = () =>{
+
         // sendOrder();
         history.push('/thankYou');
+
     }
 
     
@@ -58,20 +63,23 @@ const Checkout = () => {
             <h4>{address.type}</h4>
         </div>
         <div>
-        <table>
-        <tr>
-          <th>Name</th>
-          <th>Cost</th>
-        </tr>
-        {cart.map((item) =>{ 
-            return (
-                <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>{item.price}</td>
-              </tr>
-            )
-        })}
-       
+        <table className="checkout_table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+          {cart.map((item) =>{ 
+                return (
+                  <tr key={item.id}>
+                    <td>{item.name}</td>
+                    <td>{item.price}</td>
+                  </tr>
+                )
+            })}
+          </tbody>
       </table>
         </div>
         <button onClick={handleCheckout}>CHECKOUT</button>
