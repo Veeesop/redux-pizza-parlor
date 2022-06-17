@@ -46,8 +46,10 @@ const Checkout = () => {
     }
 
     const handleCheckout = () =>{
-        sendOrder();
-        history.push('/adminOrder');
+
+        // sendOrder();
+        history.push('/thankYou');
+
     }
 
     
