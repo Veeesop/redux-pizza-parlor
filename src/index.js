@@ -13,7 +13,7 @@ const pizzaGalleryList = (state = [], action) => {
   if (action.type === "SET_PIZZA_GALLERY") {
     //returning the payload of the data 
     return action.payload;
-  }
+  } 
   return state;
 };
 
@@ -22,8 +22,11 @@ const cartReducer = (state = [], action) => {
   if (action.type === "ADD_TO_CART") {
     return [...state, action.payload];
   }
-  else if(action.type === "DELETE_FROM_CART"){
-    
+  else if(action.type === "EMPTY_ORDER"){
+     return state = []
+  }
+  else if(action.type === "REMOVE_FOR_CART"){
+    return state.filter( order => order.id !== action.payload )
   }
 
   return state;
@@ -33,7 +36,10 @@ const cartReducer = (state = [], action) => {
 const custoInfoReducer = (state = [], action) => {
   if (action.type === "SET_CUSTOMER_INFO") {
     return action.payload;
-  }
+  } 
+  else if(action.type === "EMPTY_ORDER"){
+    return state = []
+ }
   return state;
 };
 
@@ -41,6 +47,10 @@ const primePizzaOrders = (state = [], action) => {
   if (action.type === "SET_PRIME_PIZZA_ORDERS") {
     return action.payload;
   }
+  else if(action.type === "EMPTY_ORDER"){
+    return state = []
+ }
+
   return state;
 };
 
@@ -48,6 +58,11 @@ const cartPriceReducer = (state = 0, action) => {
   if (action.type === "SET_CART_PRICE") {
     return action.payload;
   }
+  else if(action.type === "EMPTY_ORDER"){
+    return state = 0
+ }
+
+
   return state;
 }
 
