@@ -5,6 +5,7 @@ import App from "./components/App/App";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
+import { Router } from "react-router-dom";
 
 // --- Reducers ---
 // Gallery reducer
@@ -46,8 +47,7 @@ const storePizza = createStore(
     pizzaGalleryList,
     primePizzaOrders,
     cartReducer,
-    custoInfoReducer
-
+    custoInfoReducer,
   }),
   applyMiddleware(logger)
 );
