@@ -50,9 +50,12 @@ const fetchPizzas = () => {
         </Route>
       
         <Route exact path="/customerInfo">
-          <Link to="/customerInfo">next</Link>
           <CustomerForm />
-        </Route>  
+        </Route>
+
+        <Route exact path="/checkout">
+          <Checkout />
+        </Route>
 
       </Router>
   

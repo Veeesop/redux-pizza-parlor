@@ -1,5 +1,7 @@
 import { useDispatch } from "react-redux"
 import { useState } from "react"
+import { useHistory } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 
 
@@ -11,7 +13,9 @@ const CustomerForm = () => {
     const [city, setCity] = useState('')
     const [type, setType] = useState('')
 
+    const history = useHistory()
 
+  
     const dispatch = useDispatch()
     const handleSubmit = (evt) => {
         const customerInfo = {
@@ -28,6 +32,8 @@ const CustomerForm = () => {
             payload: customerInfo
         })
 
+        history.push('/checkout')
+        
 
     }
 
