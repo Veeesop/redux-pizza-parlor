@@ -53,7 +53,7 @@ const fetchPizzas = () => {
           <PizzaGallery/>
         </Route>
         
-       
+
         <Route exact path="/customerInfo">
           <CustomerForm />
         </Route>

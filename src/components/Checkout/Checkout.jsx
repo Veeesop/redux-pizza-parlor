@@ -5,28 +5,42 @@ import { useHistory } from "react-router-dom";
 const Checkout = () => {
     const history = useHistory();
 
+  const pizzas =[] 
+
     const address = useSelector(store => store.custoInfoReducer)
     const cart = useSelector(store => store.cartReducer)
 
     console.log(cart)
 
-    // const sendOrder = () => {
-    //     const pizzaOrder ={
-    //         customer_name: "boooby",
-    //         street_address: "5050",
-    //         city: "address.city",
-    //         zip: "10001",
-    //         total: "27.98",
-    //         type: "address.type",
-    //         pizzas: 
-    //     }
+    for(let item of cart){
+      let pizza = {
+        id: item.id,
+        quantity: '1'
+      }
+      pizzas.push(pizza)
+    }
 
-    //     axios.post('/api/order', pizzaOrder).then(()=>{
-    //         console.log('post success', pizzaOrder)
-    //     }).catch(err=>{
-    //         console.log('error in sendOrder Post', err)
-    //     })
-    // }
+    console.log(pizzas);
+
+    const sendOrder = () => {
+        const pizzaOrder ={
+            customer_name: address.name,
+            street_address: address.streetAddress,
+            city: address.city,
+            zip: 55419,
+            total: "27.98",
+            type: address.type,
+            pizzas: pizzas
+        }
+
+
+
+        axios.post('/api/order', pizzaOrder).then(()=>{
+            console.log('post success', pizzaOrder)
+        }).catch(err=>{
+            console.log('error in sendOrder Post', err)
+        })
+    }
 
     const handleCheckout = () =>{
         // sendOrder();
@@ -51,7 +65,7 @@ const Checkout = () => {
         </tr>
         {cart.map((item) =>{ 
             return (
-                <tr>
+                <tr key={item.id}>
                 <td>{item.name}</td>
                 <td>{item.price}</td>
               </tr>
