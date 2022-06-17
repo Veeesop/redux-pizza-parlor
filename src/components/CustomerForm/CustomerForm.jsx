@@ -16,8 +16,6 @@ const CustomerForm = () => {
     const [city, setCity] = useState('')
     const [type, setType] = useState('')
 
-    const history = useHistory()
-
   
     const dispatch = useDispatch()
     const handleSubmit = (evt) => {
