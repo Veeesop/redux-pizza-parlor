@@ -58,20 +58,23 @@ const Checkout = () => {
             <h4>{address.type}</h4>
         </div>
         <div>
-        <table>
-        <tr>
-          <th>Name</th>
-          <th>Cost</th>
-        </tr>
-        {cart.map((item) =>{ 
-            return (
-                <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>{item.price}</td>
-              </tr>
-            )
-        })}
-       
+        <table className="checkout_table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+          {cart.map((item) =>{ 
+                return (
+                  <tr key={item.id}>
+                    <td>{item.name}</td>
+                    <td>{item.price}</td>
+                  </tr>
+                )
+            })}
+          </tbody>
       </table>
         </div>
         <button onClick={handleCheckout}>CHECKOUT</button>
