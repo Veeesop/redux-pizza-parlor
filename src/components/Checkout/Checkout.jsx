@@ -9,6 +9,7 @@ const Checkout = () => {
 
     const address = useSelector(store => store.custoInfoReducer)
     const cart = useSelector(store => store.cartReducer)
+    const cartPrice = useSelector(store => store.cartPriceReducer)
 
     console.log(cart)
 
@@ -28,7 +29,7 @@ const Checkout = () => {
             street_address: address.streetAddress,
             city: address.city,
             zip: 55419,
-            total: "27.98",
+            total: cartPrice,
             type: address.type,
             pizzas: pizzas
         }
@@ -43,7 +44,7 @@ const Checkout = () => {
     }
 
     const handleCheckout = () =>{
-        // sendOrder();
+        sendOrder();
         history.push('/adminOrder');
     }
 
