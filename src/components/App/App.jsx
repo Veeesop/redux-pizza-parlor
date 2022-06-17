@@ -19,15 +19,19 @@ import PizzaGallery from '../PizzaGallery/PizzaGallery';
 function App() {
   const dispatch = useDispatch();
 
+//on page load we execute fetchPizzas function  
 useEffect(() => {
   fetchPizzas();
 }, []);
 
+//grabs the pizza data from database 
 const fetchPizzas = () => {
+  //we go to pizza router 
   axios({
     method: 'GET',
     url: '/api/pizza'
   }).then(response => {
+    // we take the pizza data and dispatch it to the pizzaGalleryList reducer
     dispatch({
       type: 'SET_PIZZA_GALLERY',
       payload: response.data,
@@ -48,7 +52,10 @@ const fetchPizzas = () => {
           <p>Pizza is great.</p>
           <PizzaGallery/>
         </Route>
-      
+        
+        <Route exact path='/checkout'>
+          <Checkout />
+        </Route>
         <Route exact path="/customerInfo">
           <Link to="/customerInfo">next</Link>
           <CustomerForm />

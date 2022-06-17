@@ -1,10 +1,13 @@
-import { useDispatch } from "react-redux"
-import { useState } from "react"
-
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { useHistory } from 'react-router-dom';
 
 
 
 const CustomerForm = () => {
+    //let's you go to the next page 
+    const history = useHistory();
+
     //local state for form
     const [name, setName] = useState('')
     const [streetAddress, setStreetAddress] = useState('')
@@ -46,7 +49,12 @@ const CustomerForm = () => {
                     <input type="radio" name="type" id="delivery" value="delivery" checked={type === 'delivery'} onChange={evt => {setType(evt.target.value)}}/>
                     <label htmlFor="delivery">Delivery</label>
                 </div>
-                <button type="submit">Next</button>
+                <button 
+                onClick={()=>{
+                    // uses the data and goes to next page
+                    history.push('/Checkout');
+                }}
+                type="submit">Next</button>
             </form>
         </>
     )
