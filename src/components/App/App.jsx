@@ -9,7 +9,7 @@ import CustomerForm from '../CustomerForm/CustomerForm';
 import Header from '../Header/Header';
 
 import Checkout from '../Checkout/Checkout';
-
+import AdminOrder from '../AdminOrder/AdminOrder';
 
 
 //PizzaGallery
@@ -53,13 +53,18 @@ const fetchPizzas = () => {
           <PizzaGallery/>
         </Route>
         
-        <Route exact path='/checkout'>
+
+        <Route exact path="/customerInfo">
+          <CustomerForm />
+        </Route>
+
+        <Route exact path="/checkout">
           <Checkout />
         </Route>
-        <Route exact path="/customerInfo">
-          <Link to="/customerInfo">next</Link>
-          <CustomerForm />
-        </Route>  
+
+        <Route exact path="/adminOrder">
+          <AdminOrder />
+        </Route>
 
       </Router>
   
