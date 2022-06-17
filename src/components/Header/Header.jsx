@@ -1,8 +1,10 @@
-import { useSelector } from 'react-redux';
-
+import { useSelector, useDispatch } from 'react-redux';
+import './Header.css';
 
 function Header() {
     const cart = useSelector(store => store.cartReducer)
+
+    const dispatch = useDispatch();
 
     console.log('In Header function component, this is our cart:', cart);
 
@@ -11,6 +13,12 @@ function Header() {
         for(let item of cart) {
             amount += Number(item.price);
         }
+
+        dispatch({
+            type: "SET_CART_PRICE",
+            payload: amount
+        })
+
         return amount;
     }
 
