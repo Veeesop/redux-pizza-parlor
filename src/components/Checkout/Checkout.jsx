@@ -1,7 +1,9 @@
 import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
+import { useHistory } from "react-router-dom";
 
 const Checkout = () => {
+    const history = useHistory();
 
   const pizzas =[] 
 
@@ -41,7 +43,8 @@ const Checkout = () => {
     }
 
     const handleCheckout = () =>{
-        sendOrder()
+        // sendOrder();
+        history.push('/adminOrder');
     }
 
     
