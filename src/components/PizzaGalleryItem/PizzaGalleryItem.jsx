@@ -29,7 +29,10 @@ export default function PizzaGalleryItem({pizzaGalleryItem}){
         <div>
             <div className='PizzaGalleryItem' >
                     <h3>{pizzaGalleryItem.name}</h3>
+                    <div className='PizzaDescription'>
                     <p>{pizzaGalleryItem.description}</p>
+                    </div>
+                    
                     <p>{pizzaGalleryItem.price}</p>
                    {(isButtonClick)?
                         <button onClick={deleteFromCart}>

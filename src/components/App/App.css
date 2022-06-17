@@ -3,6 +3,8 @@
 }
 
 .App-header {
+  position: sticky;
+  top: 0px;
   background-color: #222;
   height: 70px;
   padding: 20px;
@@ -17,3 +19,4 @@
 .pizzaPic {
   width: 200px;
 }
+
