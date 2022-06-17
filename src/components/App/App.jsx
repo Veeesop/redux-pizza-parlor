@@ -41,11 +41,6 @@ const fetchPizzas = () => {
     <div className='App'>
       <Header />
       <Router>
-
-          <Link to="/customerInfo">next</Link>
-          <Route exact path="/customerInfo">
-            <CustomerForm />
-          </Route>
       
        {/* //welcome */}
         <Route exact path='/'>
