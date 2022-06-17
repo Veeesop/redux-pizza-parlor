@@ -16,7 +16,6 @@ const CustomerForm = () => {
     const [city, setCity] = useState('')
     const [type, setType] = useState('')
 
-    const history = useHistory()
 
   
     const dispatch = useDispatch()
@@ -55,12 +54,7 @@ const CustomerForm = () => {
                     <input type="radio" name="type" id="delivery" value="delivery" checked={type === 'delivery'} onChange={evt => {setType(evt.target.value)}}/>
                     <label htmlFor="delivery">Delivery</label>
                 </div>
-                <button 
-                onClick={()=>{
-                    // uses the data and goes to next page
-                    history.push('/Checkout');
-                }}
-                type="submit">Next</button>
+                <button type="submit">Next</button>
             </form>
         </>
     )
