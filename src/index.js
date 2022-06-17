@@ -11,6 +11,7 @@ import { Router } from "react-router-dom";
 // Gallery reducer
 const pizzaGalleryList = (state = [], action) => {
   if (action.type === "SET_PIZZA_GALLERY") {
+    //returning the payload of the data 
     return action.payload;
   }
   return state;
@@ -19,6 +20,9 @@ const pizzaGalleryList = (state = [], action) => {
 const cartReducer = (state = [], action) => {
   if (action.type === "ADD_TO_CART") {
     return [...state, action.payload];
+  }
+  else if(action.type === "DELETE_FROM_CART"){
+    
   }
 
   return state;
