@@ -59,7 +59,7 @@ const cartPriceReducer = (state = 0, action) => {
 
 const storePizza = createStore(
   combineReducers({
-    pizzaGalleryList,
+    pizzaGalleryList, 
     cartReducer,
     custoInfoReducer,
 
