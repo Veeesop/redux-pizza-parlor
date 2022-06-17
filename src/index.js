@@ -43,16 +43,7 @@ const custoInfoReducer = (state = [], action) => {
   return state;
 };
 
-const primePizzaOrders = (state = [], action) => {
-  if (action.type === "SET_PRIME_PIZZA_ORDERS") {
-    return action.payload;
-  }
-  else if(action.type === "EMPTY_ORDER"){
-    return state = []
- }
 
-  return state;
-};
 
 const cartPriceReducer = (state = 0, action) => {
   if (action.type === "SET_CART_PRICE") {
@@ -69,7 +60,6 @@ const cartPriceReducer = (state = 0, action) => {
 const storePizza = createStore(
   combineReducers({
     pizzaGalleryList,
-    primePizzaOrders,
     cartReducer,
     custoInfoReducer,
 
