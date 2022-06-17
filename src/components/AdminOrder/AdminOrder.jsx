@@ -1,9 +1,14 @@
 import React from 'react';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import axios from 'axios';
 
 
 
 function AdminOrder(){
+
+useEffect(() =>{
+    getOrder()
+}, [])
 
 const [currentOrder, setCurrentOrder] = useState([]);    
 
@@ -32,7 +37,7 @@ return (
         <tbody>
             {currentOrder.map(order => (
                 <tr>
-                    <td>{order.name}</td>
+                    <td>{order.customer_name}</td>
                     <td>{order.time}</td>
                     <td>{order.type}</td>
                     <td>{order.total}</td>
